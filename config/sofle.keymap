@@ -153,6 +153,20 @@
         // Special Characters - Other
         // Encoder
         // Tap Dance
+
+        ud_scroll: ud_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "UD_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+
+        rl_scroll: rl_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RL_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+        };
     };
 
     keymap {
@@ -174,9 +188,7 @@
                         &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mo 1   &kp SPACE     &kp ENTER         &mo 2   &kp MINUS  &kp EQUAL  &kp DELETE
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&ud_scroll>;
         };
 
         lower_layer {
@@ -217,9 +229,7 @@
                          &trans           &trans           &trans        &trans           &trans        &trans            &trans         &trans          &trans        &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&rl_scroll>;
         };
     };
 };
