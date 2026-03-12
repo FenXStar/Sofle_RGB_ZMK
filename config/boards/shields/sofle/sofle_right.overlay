@@ -37,6 +37,8 @@
         prechargep = <0x22>;
     };
 
+};
+
 &spi3 {
   compatible = "nordic,nrf-spim";
   status = "okay";
@@ -61,6 +63,6 @@
 
 / {
     chosen {
+        zephyr,display = &oled;
         zmk,underglow = &led_strip;
     };
-};
