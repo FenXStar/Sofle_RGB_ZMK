@@ -1,9 +1,14 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <layouts/josefadamcik/sofle.dtsi>
+
+&josefadamcik_sofle_layout {
+    transform = <&default_transform>;
+};
 
 / {
     chosen {
+        zephyr,display = &oled;
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &default_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -59,5 +64,4 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
-};
 };

@@ -33,6 +33,7 @@
         inversion-on;
         prechargep = <0x22>;
     };
+};
 
 &spi3 {
   compatible = "nordic,nrf-spim";
@@ -58,7 +59,6 @@
 
 / {
     chosen {
-        zephyr,display = &oled;
         zmk,underglow = &led_strip;
     };
-    
+};    
